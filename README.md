@@ -51,7 +51,7 @@ You can log in to the application with the following credentials:
 
 ## Scanning
 
-A [ZAP](https://www.zaproxy.org/) or [StackHawk](https://www.stackhawk.com/login) scan should uncover these bugs:
+A [ZAP](https://www.zaproxy.org/) or [StackHawk](https://www.stackhawk.com/) scan should uncover these bugs:
 
 | Bug | Example |
 | --- | --- |
@@ -104,7 +104,7 @@ docker run --tty --rm --network host --volume $(pwd):/hawk \
   stackhawk/hawkscan stackhawk.yml stackhawk-auth-external-token.yml
 ```
 
-Scan using basic authentication, using an external script to derive the correct authorization token. This legacy method is an insecure form of bearer token authentication. [See the docs](https://docs.stackhawk.com/hawkscan/configuration/authenticated-scanning.html#example-external-token-authentication--custom-token-authorization) for more information.
+Scan using basic authentication, using an external script to derive the correct authorization token. This legacy method is an insecure form of token authentication. [See the docs](https://docs.stackhawk.com/hawkscan/configuration/authenticated-scanning.html#example-external-token-authentication--custom-token-authorization) for more information.
 ```shell
 export AUTH_TOKEN=$(./scripts/basic-auth.sh)
 docker run --tty --rm --network host --volume $(pwd):/hawk \
