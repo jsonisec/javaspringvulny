@@ -20,4 +20,4 @@ jobs:
             API_TOKEN: ${{secrets.API_TOKEN}}
         with:
             apiKey: ${{secrets.HAWK_API_KEY}}
-            environmentVariable: API_TOKEN
+            environmentVariables: API_TOKEN
