@@ -15,7 +15,7 @@ jobs:
       - name: Run the app
         run: Docker-compose up --detach
       - name: run hawkscan
-        uses: stackhawk/hawkscan@v1.3.0  
+        uses: stackhawk/hawkscan-action@v1.3.0
         env:
             API_TOKEN: ${{secrets.API_TOKEN}}
         with:
