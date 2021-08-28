@@ -11,13 +11,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build the app
-        run: Docker-compose build
+        run: docker-compose build
       - name: Run the app
-        run: Docker-compose up --detach
+        run: docker-compose up --detach
       - name: run hawkscan
-        uses: stackhawk/hawkscan@v1.3.0  
+        uses: stackhawk/hawkscan-action@v1.3.0
         env:
-            API_TOKEN: ${{secrets.API_TOKEN}}
+            API_TOKEN: ${{ secrets.API_TOKEN }}
         with:
-            apiKey: ${{secrets.HAWK_API_KEY}}
-            environmentVariable: API_TOKEN
+            apiKey: ${{ secrets.HAWK_API_KEY }}
+            environmentVariables: API_TOKEN
