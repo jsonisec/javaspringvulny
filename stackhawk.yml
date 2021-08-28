@@ -1,23 +1,5 @@
-name: Build and Scan
-
-on:
-  push:
-  pull_request:
+app:
+    applicationId: 688c9b70-f014-47b4-85ff-d02aade4c670 # (required)
+    env: Development # (required)
+    host: https://localhost:9000 # (required)
     
-jobs:
-  build-and-scan:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Build the app
-        run: docker-compose build
-      - name: Run the app
-        run: docker-compose up --detach
-      - name: run hawkscan
-        uses: stackhawk/hawkscan-action@v1.3.0
-        env:
-            API_TOKEN: ${{ secrets.API_TOKEN }}
-        with:
-            apiKey: ${{ secrets.HAWK_API_KEY }}
-            environmentVariables: API_TOKEN
